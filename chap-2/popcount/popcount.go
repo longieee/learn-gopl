@@ -35,7 +35,6 @@ func PopCountLoop(x uint64) int {
 // Ex 2.4
 // Write a version of PopCount that counts bits by shifting its argument through 64
 // bits position, testing the rightmost bit at each time.
-
 func PopCountShift(x uint64) int {
 	n := 0
 	for i := uint64(0); i < 64; i++ {
@@ -43,6 +42,18 @@ func PopCountShift(x uint64) int {
 			n++
 		}
 		x = x >> 1
+	}
+	return n
+}
+
+// Ex 2.5
+// The expression x&(x-1) clears the rightmost non-zero bit of x
+// Write a version of PopCount that counts bits using this fact
+func PopCountClearRightMost(x uint64) int {
+	n := 0
+	for x != 0 {
+		x = x & (x - 1)
+		n++
 	}
 	return n
 }
