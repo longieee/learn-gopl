@@ -22,10 +22,27 @@ func PopCount(x uint64) int {
 		pc[byte(x>>(7*8))])
 }
 
+// Ex 2.3
+// Rewrite PopCount to use a loop instead of a single expression.
 func PopCountLoop(x uint64) int {
 	var ret int = 0
 	for i := 0; i < 8; i++ {
 		ret += int(pc[byte(x>>(i*8))])
 	}
 	return ret
+}
+
+// Ex 2.4
+// Write a version of PopCount that counts bits by shifting its argument through 64
+// bits position, testing the rightmost bit at each time.
+
+func PopCountShift(x uint64) int {
+	n := 0
+	for i := uint64(0); i < 64; i++ {
+		if x&1 != 0 {
+			n++
+		}
+		x = x >> 1
+	}
+	return n
 }
