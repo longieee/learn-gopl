@@ -2,7 +2,7 @@
 
 My implementation of exercises in book The Go Programming Language
 
-# Note to myself
+## Note to myself
 
 When working on VSCode in local, if I open the root folder of this repo, then the compiler will throw some errors, saying that it cannot find the packgages, e.g.
 
