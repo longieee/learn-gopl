@@ -19,3 +19,6 @@
 
 # compilied bunary files
 bin*
+
+# VSCode environment files
+.vscode*
